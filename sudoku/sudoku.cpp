@@ -18,16 +18,67 @@ int puzzle[10][10];
 bool flag = false;
 FILE *outfile;
 FILE *infile;
+bool checkSudoku(int a[10][10])
+{
+	int f[10];
+	memset(f, 0, sizeof(f));
+	int fsum = 0;
+	for (int i = 0; i < 9; i++) {
+		for (int j = 0; j < 9; j++) {
+			if (f[a[i][j]] == 0) {
+				f[a[i][j]] = 1;
+				fsum++;
+			} else {
+				printf("1 %d %d\n", i, j);
+				return false;
+			}
+		}
+		fsum = 0;
+		memset(f, 0, sizeof(f));
+	}
+	for (int i = 0; i < 9; i++) {
+		for (int j = 0; j < 9; j++) {
+			if (f[a[j][i]] == 0) {
+				f[a[j][i]] = 1;
+				fsum++;
+			} else {		
+				printf("2 %d %d\n", i, j);
+				return false;
+			}
+		}		
+		fsum = 0;
+		memset(f, 0, sizeof(f));
+	}
+	for (int i = 0; i < 3; i++) {
+		for (int j = 0; j < 3; j++) {
+			for (int k = 0; k < 3; k++) {
+				for (int l = 0; l < 3; l++) {
+					if (f[a[i * 3 + k][j * 3 + l]] == 0) {
+						f[a[i * 3 + k][j * 3 + l]] = 1;
+						fsum++;
+					} else {
+						printf("3 %d %d\n", i, j);
+						return false;
+					}
+				}
+			}
+			fsum = 0;
+			memset(f, 0, sizeof(f));
+		}
+	}
+	return true;
+}
+
 void updateBasicSudokuNum(int num)
 {
-	int k = 0;
+	int k = -1;
 	for (int i = 6; i >= 0; i--) {
 		if (basicSudokuNum[num][i] < basicSudokuNum[num][i + 1]) {
 			k = i;
 			break;
 		}
 	}
-	if (k == 0) {
+	if (k == -1) {
 		return;
 	}
 	int min = 10;
@@ -126,6 +177,18 @@ void solvePuzzle(int x, int y)
 	}
 	fprintf(outfile, "\n");
 }
+int transArgv2(char *s)
+{
+	int num = s[0] - '0';
+	for (int i = 1; i < strlen(s); i++) {
+		if (s[i] < '0' || s[i] > '9') {
+			return -1;
+		}
+		num = num * 10 + (s[i] - '0');
+	}
+	return num;
+}
+
 int main(int argc, char * argv[])
 {
 	clock_t start, finish;
@@ -139,16 +202,13 @@ int main(int argc, char * argv[])
 	}
 	// -c function
 	if (argc == 3 && strlen(argv[1]) == 2 && argv[1][0] == '-' && argv[1][1] == 'c') {
-		int num = argv[2][0] - '0';
-		for (int i = 1; i < strlen(argv[2]); i++) {
-			if (argv[2][i] < '0' || argv[2][i] > '9') {
-				printf("error");
-				return 0;
-			}
-			num = num * 10 + (argv[2][i] - '0');
+		int num = transArgv2(argv[2]);
+		if (num == -1) {
+			printf("error\n");
+			return 0;
 		}
 		for (int i = 0; i < num; i++) {
-			createCompleteSudoku(i/40000);
+			createCompleteSudoku(i / 40000);
 			for (int j = 0; j < 9; j++) {
 				fprintf(outfile, "%d", sudoku[j][0]);
 				for (int k = 1; k < 9; k++) {
@@ -187,7 +247,7 @@ int main(int argc, char * argv[])
 		printf("error");
 	}
 	finish = clock();
-	cout << finish - start;
+	printf("time = %.2f", (start - finish) / 1000);
     return 0;
 }
 
