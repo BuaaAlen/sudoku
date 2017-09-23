@@ -1,6 +1,6 @@
-[2017-09-21 16:16:52] [info] Start Program:
+[2017-09-23 01:44:16] [info] Start Program:
 Path:"H:\VSCode\sudoku\x64\Release\sudoku.exe"
-Arguments:
+Arguments:sudoku.exe -c 3 
 Working directory: "H:\VSCode\sudoku\sudoku\"
 Modules: Selected: H:\VSCode\sudoku\x64\Release\sudoku.exe H:\VSCode\sudoku\x64\Release\sudokuUnitTest1.dll Excluded: 
 Sources: Selected: H:\VSCode\sudoku\sudoku H:\VSCode\sudoku\sudokuUnitTest1 Excluded: 
@@ -9,21 +9,20 @@ Cover Children: 0
 Aggregate by file: 1
 Continue after C++ exception: 0
 Optimized build support: 1
-Export: Binary C:\Users\不言\AppData\Local\Temp\txrfqmxp.zol 
+Export: Binary C:\Users\不言\AppData\Local\Temp\zkevwvbi.tm2 
 Input coverage: 
 Unified diff: 
 Excluded line regular expressions: 
 
-[2017-09-21 16:16:52] [info] Module: H:\VSCode\sudoku\x64\Release\sudoku.exe is selected because it matches selected pattern: 
-[2017-09-21 16:16:52] [info] Module: C:\Windows\System32\ntdll.dll is skipped because it matches no selected patterns
-[2017-09-21 16:16:52] [info] Module: C:\Windows\System32\kernel32.dll is skipped because it matches no selected patterns
-[2017-09-21 16:16:52] [info] Module: C:\Windows\System32\KernelBase.dll is skipped because it matches no selected patterns
-[2017-09-21 16:16:52] [info] Module: C:\Windows\System32\ucrtbase.dll is skipped because it matches no selected patterns
-[2017-09-21 16:16:52] [info] Module: C:\Windows\System32\msvcp140.dll is skipped because it matches no selected patterns
-[2017-09-21 16:16:52] [info] Module: C:\Windows\System32\vcruntime140.dll is skipped because it matches no selected patterns
-[2017-09-21 16:16:52] [info] Module: C:\Windows\System32\kernel.appcore.dll is skipped because it matches no selected patterns
-[2017-09-21 16:16:52] [info] Module: C:\Windows\System32\msvcrt.dll is skipped because it matches no selected patterns
-[2017-09-21 16:16:52] [info] Module: C:\Windows\System32\rpcrt4.dll is skipped because it matches no selected patterns
-[2017-09-21 16:16:52] [info] ----------------------------------------------------
-[2017-09-21 16:16:52] [info] Coverage binary generated in file: C:\Users\不言\AppData\Local\Temp\txrfqmxp.zol
-[2017-09-21 16:16:52] [info] ----------------------------------------------------
+[2017-09-23 01:44:16] [info] Module: H:\VSCode\sudoku\x64\Release\sudoku.exe is selected because it matches selected pattern: 
+[2017-09-23 01:44:16] [info] Module: C:\Windows\System32\ntdll.dll is skipped because it matches no selected patterns
+[2017-09-23 01:44:16] [info] Module: C:\Windows\System32\kernel32.dll is skipped because it matches no selected patterns
+[2017-09-23 01:44:16] [info] Module: C:\Windows\System32\KernelBase.dll is skipped because it matches no selected patterns
+[2017-09-23 01:44:16] [info] Module: C:\Windows\System32\ucrtbase.dll is skipped because it matches no selected patterns
+[2017-09-23 01:44:16] [info] Module: C:\Windows\System32\vcruntime140.dll is skipped because it matches no selected patterns
+[2017-09-23 01:44:16] [info] Module: C:\Windows\System32\kernel.appcore.dll is skipped because it matches no selected patterns
+[2017-09-23 01:44:16] [info] Module: C:\Windows\System32\msvcrt.dll is skipped because it matches no selected patterns
+[2017-09-23 01:44:16] [info] Module: C:\Windows\System32\rpcrt4.dll is skipped because it matches no selected patterns
+[2017-09-23 01:44:16] [info] ----------------------------------------------------
+[2017-09-23 01:44:16] [info] Coverage binary generated in file: C:\Users\不言\AppData\Local\Temp\zkevwvbi.tm2
+[2017-09-23 01:44:16] [info] ----------------------------------------------------
